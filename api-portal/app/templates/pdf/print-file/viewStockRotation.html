@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Phiếu chuyển kho</title>
+    <meta charset="UTF-8">
+</head>
+
+<body style="
+margin: 0;
+padding: 0;
+font-size: 14px;
+background: #f2f2f2;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
+">
+    <div style="
+    margin: 0;
+    padding: 0;
+    max-width: 210mm;
+    max-height: 297mm;
+    height: 297mm;
+    background: #fff;
+    margin: 0 auto;
+">
+        <div style="overflow: hidden; padding: 3mm 7mm">
+            <div style="width: 20%; text-align: center; float: left">
+                <img src="data:image/png;base64,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"
+                    alt="2" style="max-height: 60px" />
+            </div>
+            <div style="width: 60%; text-align: center; float: left">
+                <h2 style="
+                            margin: 0;
+                            padding: 0;
+                            font-size: 16px;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            color: #333333;
+                        ">
+                    CÔNG TY CỔ PHẦN HESMAN VIỆT NAM
+                </h2>
+            </div>
+            <div style="width: 20%; text-align: center; float: right; text-align: right">
+                <p style="margin: 0; padding: 0; font-size: 14px">Mã hiệu: KS</p>
+                <p style="margin: 0; padding: 0; font-size: 14px">Quy trình: ls</p>
+            </div>
+        </div>
+        <h1
+            style="margin: 0; padding: 0; font-size: 25px; font-weight: bold; color:#313444; text-align: center; padding-top: 6mm;">
+            PHIẾU CHUYỂN KHO</h1>
+        <p style="margin: 0; padding: 0; font-size: 16px; margin-top: 3mm; margin-bottom: 10mm; text-align: center;">Số
+            phiếu: <%= data. stocks_transfer_code %>
+        </p>
+
+        <div style="margin-top: 10mm; padding: 0 10mm;">
+            <ul style="list-style: none; margin: 0; padding: 0; ">
+                <li style="margin: 3mm 0;"><b style="display: inline-block; width: 180px">Kho chuyển:</b>
+                    <%= data.stocks_export_name %>
+                </li>
+                <li style="margin: 3mm 0;"><b style="display: inline-block; width: 180px">Địa chỉ kho chuyển:</b>
+                    <%= data.stocks_export_address %>
+                </li>
+                <li style="margin: 3mm 0;"><b style="display: inline-block; width: 180px">Người chuyển: </b>
+                    <%= data.export_user_name %>
+                </li>
+                <li style="margin: 3mm 0;"><b style="display: inline-block; width: 180px">Kho nhận</b>
+                    <%= data.stocks_import_name %>
+                </li>
+                <li style="margin: 3mm 0;"><b style="display: inline-block; width: 180px">Địa chỉ kho nhận:</b>
+                    <%= data.stocks_import_address %>
+                </li>
+                <li style="margin: 3mm 0;"><b style="display: inline-block; width: 180px">Người nhận: </b> </b>
+                    <%= data.import_user_name %>
+                </li>
+            </ul>
+        </div>
+        <div style="margin-top: 5mm; padding: 0 10mm;">
+            <table style="font-size: 13px; border-spacing: 0; width: 100%;">
+                <tr style="font-weight: bold; background: #313444;">
+                    <td style="padding: 10px; color: #fff; text-align: center;">STT</td>
+                    <td style="padding: 10px; color: #fff;">Mã sản phẩm</td>
+                    <td style="padding: 10px; color: #fff; width: 30%;">Tên sản phẩm</td>
+                    <td style="padding: 10px; color: #fff; text-align: center;">ĐVT</td>
+                    <td style="padding: 10px; color: #fff; text-align: center;">SL</td>
+                    <% if (data.transfer_type !== 1) { %>
+                    <td style="padding: 10px; color: #fff; text-align: center;">Đơn giá</td>
+                    <td style="padding: 10px; color: #fff; text-align: center;">Thành tiền</td>
+                    <% } %>
+                </tr>
+                <% for(var i=0; i<data.product.length; i++) {%>
+                    <tr>
+                        <td style="border: 1px solid #ccc; border-top: none; padding: 10px; text-align: center;">
+                            <%= i+1 %>
+                        </td>
+                        <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px;">
+                            <b>
+                                <%= data.product[i].product_code %>
+                            </b>
+                        </td>
+                        <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px;">
+                            <%= data.product[i].product_name %>
+                        </td>
+                        <td
+                            style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px; text-align: center;">
+                            <%= data.product[i].unit_name %>
+                        </td>
+                        <td
+                            style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px; text-align: center;">
+                            <%= data.product[i].quantity %>
+                        </td>
+                        <% if (data.transfer_type !== 1) { %>
+                        <td
+                            style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px; text-align: center;">
+                            <%= data.product[i].price %> đ
+                        </td>
+                        <td
+                            style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px; text-align: center;">
+                            <%= data.product[i].total_price %> đ
+                        </td>
+                        <% } %>
+                    </tr>
+                    <% } %>
+
+                        <tr>
+                            <td colspan="4"
+                                style="border: 1px solid #ccc; border-top: none; padding: 10px; text-align: center;">
+                                <b>Tổng
+                                    cộng</b>
+                            </td>
+                            <td
+                                style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px; text-align: center;">
+                                <%= data.total_product %>
+                            </td>
+                            <% if (data.transfer_type !== 1) { %>
+                            <td
+                                style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px; text-align: center;">
+                            </td>
+                            <td
+                                style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px; text-align: center;">
+                                <b>
+                                    <%= data.total_money %> đ
+                                </b>
+                            </td>
+                            <% } %>
+                        </tr>
+            </table>
+            <p style="margin-top: 15px;"><b style="display: inline-block;">Số chứng từ gốc kèm theo:</b>
+                ..................</p>
+            <p style="margin-top: 15px;"><b style="display: inline-block; width: 180px">Ghi chú: </b>
+                <%= data.description %>
+            </p>
+        </div>
+        <div style="margin-top: 10mm; padding: 0 10mm; overflow: hidden;">
+            <div style="width: 25%; float: left; text-align: center; padding-top: 61px;">
+                <h3 style="font-size: 15px; margin: 0; padding: 0;">Người lập phiếu</h3>
+                <p style="margin: 0; padding: 0; margin-top: 10px;"><i>(Ký & ghi rõ họ tên)</i></p>
+            </div>
+            <div style="width: 25%; float: left; text-align: center; padding-top: 61px;">
+                <h3 style="font-size: 15px; margin: 0; padding: 0;">Người duyệt phiếu</h3>
+                <p style="margin: 0; padding: 0; margin-top: 10px;"><i>(Ký & ghi rõ họ tên)</i></p>
+            </div>
+            <div style="width: 25%; float: left; text-align: center; padding-top: 61px">
+                <h3 style="font-size: 15px; margin: 0; padding: 0;">Thủ kho</h3>
+                <p style="margin: 0; padding: 0; margin-top: 10px;"><i>(Ký & ghi rõ họ tên)</i></p>
+            </div>
+            <div style="width: 25%; float: left; text-align: center; padding-top: 30px">
+                <p style="margin: 0; padding: 0; line-height: 30px;">Hà Nội, ngày <%= data.created_date %>
+                </p>
+                <h3 style="font-size: 15px; margin: 0; padding: 0;">Bên nhận hàng</h3>
+                <p style="margin: 0; padding: 0; margin-top: 10px;"><i>(Ký & ghi rõ họ tên)</i></p>
+            </div>
+        </div>
+    </div>
+
+    <div
+        style="margin: 0; padding: 0; max-width: 210mm; max-height: 297mm; height: auto; background: #fff; margin: 0 auto; position: relative; margin-top: 5px;">
+        <div style="overflow: hidden; padding: 3mm 7mm">
+            <div style="width: 20%; text-align: center; float: left">
+                <img src="data:image/png;base64,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"
+                    alt="2" style="max-height: 60px" />
+            </div>
+            <div style="width: 60%; text-align: center; float: left">
+                <h2 style="
+                            margin: 0;
+                            padding: 0;
+                            font-size: 16px;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            color: #333333;
+                        ">
+                    CÔNG TY CỔ PHẦN HESMAN VIỆT NAM
+                </h2>
+            </div>
+            <div style="width: 20%; text-align: center; float: right; text-align: right">
+                <p style="margin: 0; padding: 0; font-size: 14px">Mã hiệu: KS</p>
+                <p style="margin: 0; padding: 0; font-size: 14px">Quy trình: ls</p>
+            </div>
+        </div>
+        <h1
+            style="margin: 0; padding: 0; font-size: 25px; font-weight: bold; color:#313444; text-align: center; padding-top: 6mm;">
+            BẢNG KÊ IMEI</h1>
+        <div style="margin-top: 5mm; padding: 0 10mm;">
+            <p>Số lượng: <%= data.product_transfer.length %>
+            </p>
+            <table style="font-size: 13px; border-spacing: 0; width: 100%;">
+                <tr style="font-weight: bold; background: #313444">
+                    <td style="padding: 10px; color: #fff; text-align: center;width: 10%;">STT</td>
+                    <td style="padding: 10px; color: #fff; text-align: center;width: 30%;">Mã sản phẩm</td>
+                    <td style="padding: 10px; color: #fff;  text-align: center;">IMEI</td>
+
+                </tr>
+                <% for(var i=0; i<data.product_transfer.length; i++) {%>
+                    <tr>
+                        <td style="border: 1px solid #ccc; border-top: none; padding: 10px; text-align: center;">
+                            <%= i+1 %>
+                        </td>
+                        <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px;">
+                            <b>
+                                <%= data.product_transfer[i].product_code %>
+                            </b>
+                        </td>
+                        <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px;">
+                            <%= data.product_transfer[i].imei %>
+                        </td>
+                    </tr>
+                    <% } %>
+
+
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

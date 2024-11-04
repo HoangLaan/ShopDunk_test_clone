@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Building Manager</title>
+        <meta charset="utf8">
+        <style>
+            *{margin: 0; padding: 0;}
+            body{
+                font-family: 'Times New Roman', Times, serif;
+                background: #f1f1f1;
+                zoom: 50%;
+            }
+            p, h3, h4, h5{
+                line-height: 1.35;
+                font-size: 13px;
+            }
+            .bw_bold{
+                font-weight: bold;
+            }
+            .bw_container{
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            .bw_txt_center{
+                text-align: center !important;
+            }
+            .bw_txt_left{
+                text-align: left !important;
+            }
+            .bw_txt_right{
+                text-align: right !important;
+            }
+            .bw_main_body{
+                /* width: 297mm;
+                height: 210mm; */
+                padding: 10px;
+                background: #fff;
+            }
+            ul li{
+                list-style: none;
+                line-height: 1.35;
+                font-size: 13px;
+            }
+            .bw_head{
+                border-bottom: 1px solid #333;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+            .bw_head h1{
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+            .bw_main{
+                padding: 10px 0;
+            }
+            .bw_main h2{
+                font-size: 24px;
+            }
+            table{
+                border-spacing: 0;
+                width: 100%;
+                border: 1px solid #333;
+                border-right: 0;
+                text-align: center;
+                border-bottom: 0;
+                margin: 0 auto;
+                font-size: 13px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            table tr td, table th{
+                padding: 3px 7px;
+                border-bottom: 1px solid #333;
+                border-right: 1px solid #333;
+            }
+            .bw_note{
+                margin: 10px 0;
+            }
+            .bw_note ul{
+                margin-left: 30px;
+            }
+            .bw_footer{
+                margin-top: 30px;
+                overflow: hidden;
+            }
+            .bw_w_50{
+                width: 50%;
+                float: left;
+            }
+            .bw_i_receiver{
+                margin-top: 10px;
+            }
+            .bw_i_receiver span{
+                font-weight: bold;
+                display: inline-block;
+                width: 90px;
+            }
+            .bw_footer p{
+                font-weight: bold;
+            }
+            .bw_col_group{
+                margin: 0;
+                border: none;
+            }
+        </style>
+    </head>
+    <body id="bw_home">
+        <div class="bw_main_body">
+            {{#each companyInfo}}
+            <div class="bw_head bw_txt_center"> 
+                <h1>CÔNG TY TNHH TÔN MINH LONG</h1>
+                <p>Chuyên tôn cuộn: HÒA PHÁT - SÓNG THẦN - ĐẠI THIÊN LỘC - HOA SEN</p>
+                <p>ĐC: {{this.address_full}}</p>
+                <p>MST: {{this.tax_id}} - ĐT: {{this.phone_number}} - Email: {{this.email}} - Website: tonminhlong.com</p>
+            </div>
+            {{/each}}
+            <div class="bw_main">
+                <h2 class="bw_txt_center">PHIẾU BÁO GIÁ</h2>
+                <p class="bw_txt_center">{{#each companyInfo}}{{this.province_name}}{{/each}}, {{#each serviceRes}} Ngày
+                    {{this.created_date}}{{/each}}</p>
+                <div class="bw_container">
+                    <ul class="bw_i_receiver">
+                        {{#each serviceRes}}
+                            <li><span>Kính gởi:</span> {{this.full_name}}</li>
+                            <li><span>Đơn vị:</span> {{this.company_name}}</li>
+                            {{#if this.is_address}}
+                            <li><span>Địa chỉ:</span> {{this.address_full}}</li>
+                            {{/if}}
+                            {{#if this.is_phone_number}}
+                            <li><span>Điện thoại:</span> {{this.phone_number}}</li>
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                    <p>Cty tôn <b>Minh Long</b> xin gởi Quý khách hàng báo giá như sau:</p>
+                </div>
+                <div class="bw_container">
+                    <table>
+                        <tbody>
+                            <tr class="bw_bold">
+                                {{#each serviceRes }}
+                                <td rowspan="2">Stt</td>
+                                {{#if this.is_product_imei_code}}
+                                <td rowspan="2">Mã cuộn</td>
+                                {{/if}}
+                                <td rowspan="2">Tên hàng hóa/Quy cách</td>
+                                <td rowspan="2" >Đvt</td>
+                                <td rowspan="2" >Trọng lượng</td>
+                                <td rowspan="2">Tổng mét</td>
+                                {{#if this.is_length_plate}}
+                                <td colspan="2">Quy cách</td>
+                                {{/if}}
+                                {{#if this.is_met_a}}
+                                <td rowspan="2">Mét A</td>
+                                {{/if}}
+                                {{#if this.is_met_b}}
+                                <td rowspan="2">Mét B</td>
+                                {{/if}}
+                                {{#if this.is_met_c}}
+                                <td rowspan="2">Mét C</td>
+                                {{/if}}
+                                <td rowspan="2">Tỷ trọng</td>
+                                <td rowspan="2">Đơn giá</td>
+                                <td rowspan="2">Thành tiền (Đồng)</td>
+                                <td rowspan="2" >Kho</td>
+                                {{#if this.is_tolerance}}
+                                <td rowspan="2">Dung sai TT</td>
+                                {{/if}}
+                                <td rowspan="2">Ghi chú</td>
+                            </tr>
+                            {{/each}}
+                            {{#each serviceRes }}
+                            <tr>
+                                {{#if this.is_length_plate}}
+                                <td>Chiều dài (mét)</td>
+                                <td>Số tấm</td>
+                                {{/if}}
+                            </tr>
+                            {{/each}}
+                            {{#each productDetail as |productDetail index|}}
+                            <tr>
+                                <td>{{this.new_index}}</td>
+                                {{#if this.is_product_imei_code}}
+                                <td style="text-align: left">{{this.product_imei_code}}</td>
+                                {{/if}}
+                                <td style="text-align: left">{{this.product_name}}</td>
+                                <td>{{this.unit_name}}</td>
+                                <td>{{this.net_weight}}</td>
+                                <td>{{this.quantity}}</td>
+                                {{#if this.is_length_plate}}
+                                <td>{{this.plates}}</td>
+                                <td>{{this.length}}</td>
+                                {{/if}}
+                                {{#if this.is_met_a}}
+                                <td>{{#if this.met_a}}{{this.met_a}}{{/if}}</td>
+                                {{/if}}
+                                {{#if this.is_met_b}}
+                                <td>{{#if this.met_b}}{{this.met_b}}{{/if}}</td>
+                                {{/if}}
+                                {{#if this.is_met_c}}
+                                <td>{{#if this.met_c}}{{this.met_c}}{{/if}}</td>
+                                {{/if}}
+                                <td>{{this.density}}</td>
+                                <td>{{this.price}}</td>
+                                <td style="text-align: center;" class="bw_txt_right">{{this.total_price}}</td>
+                                <td>{{this.stocks_name}}</td>
+                                {{#if this.is_tolerance}}
+                                <td>{{#if this.tolerance_value}}{{this.tolerance_value}}{{/if}}</td>
+                                {{/if}}
+                                <td>{{this.note}}</td>
+                            </tr>
+                            {{/each}}
+                            {{#each serviceRes}}
+                            <tr class="bw_bold">
+                                {{#if this.is_product_imei_code}}
+                                <td colspan="4">Tổng cộng:</td>
+                                {{else}}
+                                <td colspan="3">Tổng cộng:</td>
+                                {{/if}}
+                            {{/each}}
+                                {{#each serviceRes}}
+                                <td>{{this.total_net_weight}}</td>
+                                <td>{{this.total_quantity}}</td>
+                                {{#if this.is_length_plate}}
+                                <td>{{#if this.total_plates}}{{this.total_plates}}{{/if}}</td>
+                                <td>{{#if this.total_length}}{{this.total_length}}{{/if}}</td>
+                                {{/if}}
+                                {{#if this.is_met_a}}
+                                <td>{{#if this.total_met_a}}{{this.total_met_a}}{{/if}}</td>
+                                {{/if}}
+                                {{#if this.is_met_b}}
+                                <td>{{#if this.total_met_b}}{{this.total_met_b}}{{/if}}</td>
+                                {{/if}}
+                                {{#if this.is_met_c}}
+                                <td>{{#if this.total_met_c}}{{this.total_met_c}}{{/if}}</td>
+                                {{/if}}
+                                <td></td>
+                                <td></td>
+                                <td class="bw_txt_right">{{this.total_money}}</td>
+                                <td></td>
+                                {{#if this.is_tolerance}}
+                                <td></td>
+                                {{/if}}
+                                <td></td>
+                                {{/each}}
+                            </tr>
+                            {{#each serviceRes}}
+                            <tr class="bw_bold">
+                                {{#if this.is_product_imei_code}}
+                                <td colspan="4">Đã thanh toán</td>
+                                {{else}}
+                                <td colspan="3">Đã thanh toán</td>
+                                {{/if}}
+                                <td></td>
+                                <td></td>
+                                {{#if this.is_length_plate}}
+                                <td></td>
+                                <td></td>
+                                {{/if}}
+                                {{#if this.is_met_a}}
+                                <td></td>
+                                {{/if}}
+                                {{#if this.is_met_b}}
+                                <td></td>
+                                {{/if}}
+                                {{#if this.is_met_c}}
+                                <td></td>
+                                {{/if}}
+                                <td></td>
+                                <td></td>
+                                <td class="bw_txt_right">{{this.total_paid}}</td>
+                                <td></td>
+                                {{#if this.is_tolerance}}
+                                <td></td>
+                                {{/if}}
+                                <td></td>
+                            </tr>
+                            {{/each}}
+                            {{#each serviceRes}}
+                            <tr class="bw_bold">
+                                {{#if this.is_product_imei_code}}
+                                <td colspan="4">Số tiền còn lại phải thanh toán</td>
+                                {{else}}
+                                <td colspan="3 ">Số tiền còn lại phải thanh toán</td>
+                                {{/if}}
+                                <td></td>
+                                <td></td>
+                                {{#if this.is_length_plate}}
+                                <td></td>
+                                <td></td>
+                                {{/if}}
+                                {{#if this.is_met_a}}
+                                <td></td>
+                                {{/if}}
+                                {{#if this.is_met_b}}
+                                <td></td>
+                                {{/if}}
+                                {{#if this.is_met_c}}
+                                <td></td>
+                                {{/if}}
+                                <td></td>
+                                <td></td>
+                                <td class="bw_txt_right">{{this.total_remain}}</td>
+                                <td></td>
+                                {{#if this.is_tolerance}}
+                                <td></td>
+                                {{/if}}
+                                <td></td>
+                                {{/each}}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bw_container bw_amount_text">
+                    {{#each serviceRes}}
+                    <h3><i>Bằng chữ: {{this.total_remain_text}} đồng.</i></h3>
+                    {{/each}}
+                    <div class="bw_note">
+                        <h3>Ghi chú:</h3>
+                        <ul>
+                            <li>- Đơn giá trên đã bao gồm VAT</li>
+                            <li>- Địa điểm giao hàng: Tại {{#each serviceRes}}{{this.stocks_name}}{{/each}}, {{#each serviceRes}}{{this.stocks_address}}{{/each}}</li>
+                            <li>- Thời gian giao hàng:  {{#each serviceRes}}{{this.delivery_time}}{{/each}}</li>
+                            <!-- <li>- Thời hạn thanh toán: Quý khách vui lòng thanh toán trước khi nhận hàng.</li> -->
+                            <li>- Thời hạn thanh toán: {{#each serviceRes}}{{this.payment_time}}{{/each}}</li>
+                            {{#each serviceRes as | sv | }}
+                                {{#with sv.description as | service | }}
+                                    {{#each service }}
+                                        <li>
+                                            <p>- {{this}}</p>
+                                        </li>
+                                    {{/each}}
+                                {{/with}}
+                            {{/each}}
+                            <!-- <li>- Thông tin chuyển khoản:
+                                <ul>
+                                    <li><h4>Cty TNHH Tôn Minh Long</h4></li>
+                                    <li>+ Số tài khoản: 060166722619 tại NH Sacombank Chi nhánh Quận 12 - TP. HCM</li>
+                                    <li>+ Số tài khoản: 3181.0000.198496 tại NH BIDV Chi nhánh Hóc Môn - TP. HCM</li>
+                                </ul>
+                            </li> -->
+                            <!-- <li>- Thông tin liên hệ: <b>Mr. Thanh Vương (0385 330 199)</b></li> -->
+                        </ul>
+                    </div>
+                    <h4 class="">Rất mong nhận được sự hợp tác từ Quý khách hàng!!!</h4>
+                    <div class="bw_footer">
+                        <div class="bw_w_50 bw_txt_center">
+                            <p>Xác nhận của khách hàng</p>
+                        </div>
+                        <div class="bw_w_50 bw_txt_center">
+                            <p>{{#each companyInfo}}{{this.province_name}}{{/each}}, {{#each serviceRes}} ngày
+                                {{this.print_date}}{{/each}}</p>
+                            <h4>Tôn Minh Long</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

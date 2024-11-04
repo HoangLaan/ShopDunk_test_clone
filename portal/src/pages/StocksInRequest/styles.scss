@@ -1,0 +1,25 @@
+#products_list {
+    .product_inp {
+        padding: 13px 15px !important;
+    }
+
+    .product_inp_num {
+        padding: 7px 15px;
+        min-width: 130px;
+    }
+
+    .btn_disabled {
+        background: #f2f2f2;
+        border: none;
+    }
+
+    // .bw_table td {
+    //     text-align: right !important;
+    // }
+}
+
+#cost_apply {
+    .bw_table td {
+        text-align: right !important;
+    }
+}

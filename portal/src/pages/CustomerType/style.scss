@@ -1,0 +1,10 @@
+.customer_type{
+    .btn_disabled{
+        color: silver;
+        border: 1px solid silver;
+    }
+    .btn_disabled:hover{
+        background-color: #fff;
+        border: 1px solid silver;
+    }
+}

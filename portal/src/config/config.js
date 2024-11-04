@@ -1,0 +1,9 @@
+const CONFIG = {
+  MQTT_HOST: process.env.REACT_APP_MQTT_DOMAIN,
+  MQTT_USERNAME: process.env.REACT_APP_MQTT_USER,
+  MQTT_PASSWORD: process.env.REACT_APP_MQTT_PASSWORD,
+  MQTT_PORT: process.env.REACT_APP_MQTT_PORT,
+  MQTT_PROTOCOL: process.env.REACT_APP_MQTT_PROTOCOL,
+}
+
+export default CONFIG;

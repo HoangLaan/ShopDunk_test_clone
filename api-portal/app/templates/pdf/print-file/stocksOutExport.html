@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Phiếu xuất kho</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body
+    style="
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            background: #fff;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+                'Open Sans', 'Helvetica Neue', sans-serif;
+        "
+    >
+        <div
+        style="
+                margin: 0;
+                padding: 0;
+                max-width: 210mm;
+                max-height: 297mm;
+                height: 297mm;
+                background: #fff;
+                margin: 0 auto;
+            "
+        >
+            <div style="overflow: hidden; padding: 3mm 7mm">
+                <div style="width: 20%; text-align: center; float: left">
+                    <img
+                    src="http://shopdunk-html.blackwind.vn/bw_image/logo_pphieu.png"
+                        alt="2" style="max-height: 60px" />
+                </div>
+                <div style="width: 57%; text-align: center; float: left">
+                    <h2 style="
+                            margin: 0;
+                            padding: 0;
+                            font-size: 16px;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            color: #333333;
+                        ">
+                        CÔNG TY CỔ PHẦN HESMAN VIỆT NAM
+                    </h2>
+                    <p style="margin: 7px auto; padding: 0">
+                        Địa chỉ: Số 76 Thái Hà, Phường Trung Liệt, Quận Đống Đa, Thành phố Hà Nội, Việt Nam
+                    </p>
+                </div>
+                <div style="width: 23%; text-align: center; float: right">
+                    <h3 style="margin: 0; padding: 0; font-size: 12px; margin-top: 5px; font-weight: bold">
+                        Mẫu số 01 - TT
+                    </h3>
+                    <p style="margin: 7px auto; padding: 0">
+                        (Ban hành theo thông tư số 200/2014/TT - BTC Ngày 22/12/2014 của BTC)
+                    </p>
+                </div>
+            </div>
+            <h1
+                style="
+                    margin: 0;
+                    padding: 0;
+                    font-size: 25px;
+                    font-weight: bold;
+                    color: #19376d;
+                    text-align: center;
+                    padding-top: 10mm;
+                "
+            >
+                PHIẾU XUẤT KHO
+            </h1>
+            <p style="margin: 0; padding: 0; font-size: 11px; margin-top: 3mm; text-align: center">
+                Ngày xuất: <%= data.stocks_out_request_date %>
+            </p>
+            <p style="margin: 0; padding: 0; font-size: 11px; margin-bottom: 10mm; text-align: center">
+                Số phiếu: <%= data.stocks_out_request_code %>
+            </p>
+
+            <div style="width: 23%; position: absolute; right: 0; top: 12%">
+                <p style="margin: 7px auto; padding: 0">Nợ: ...................</p>
+                <p style="margin: 7px auto; padding: 0">Có: ...................</p>
+            </div>
+
+            <div style="margin-top: 10mm; padding: 0 10mm">
+                <ul style="list-style: none; margin: 0; padding: 0">
+                    <li style="margin: 3mm 0">
+                        <b style="display: inline-block; width: 180px">Địa chỉ (bộ phận):</b> <%=data.stocks_address %> .
+                    </li>
+                    <li style="margin: 3mm 0">
+                        <b style="display: inline-block; width: 180px">Lý do xuất kho: </b>
+                    </li>
+                    <li style="margin: 3mm 0">
+                        <b style="display: inline-block; width: 180px">Địa điểm: </b> <%=data.store_address %> .
+                    </li>
+                </ul>
+            </div>
+            <div style="margin-top: 5mm; padding: 0 10mm">
+                <table style="font-size: 13px; border-spacing: 0; width: 100%">
+                    <tr style="font-weight: bold; background: #313444">
+                        <td rowspan="2" style="padding: 10px; color: #fff; text-align: center">STT</td>
+                        <td rowspan="2" style="padding: 10px; color: #fff">Mã hàng hóa</td>
+                        <td rowspan="2" style="padding: 10px; color: #fff">Tên hàng hóa/Quy cách</td>
+                        <td rowspan="2" style="padding: 10px; color: #fff; text-align: center">ĐVT</td>
+                        <td colspan="2" style="padding: 10px; color: #fff; text-align: center">Số lượng</td>
+                    </tr>
+                    <tr style="font-weight: bold; background: #313444">
+                        <td style="padding: 10px; color: #fff; text-align: center">Yêu cầu</td>
+                        <td style="padding: 10px; color: #fff; text-align: center">Thực xuất</td>
+                    </tr>
+                    <% for(var i=0; i<data.product_list.length; i++) {%>
+                        <tr>
+                            <td style="border: 1px solid #ccc; border-top: none; padding: 10px; text-align: center"> <%= i+1 %></td>
+                            <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px">
+                                <b> <%= data.product_list[i].PRODUCTCODE %> </b>
+                            </td>
+                            <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px">
+                                <%= data.product_list[i].PRODUCTNAME %>
+                            </td>
+                            <td
+                                style="
+                                    border: 1px solid #ccc;
+                                    border-top: none;
+                                    border-left: none;
+                                    padding: 10px;
+                                    text-align: center;
+                                "
+                            >  <%= data.product_list[i].UNITNAME %>
+                            </td>
+                            <td
+                                style="
+                                    border: 1px solid #ccc;
+                                    border-top: none;
+                                    border-left: none;
+                                    padding: 10px;
+                                    text-align: center;
+                                "
+                            >
+                            <%= data.product_list[i].TOTAL %>
+                            </td>
+                            <td
+                                style="
+                                    border: 1px solid #ccc;
+                                    border-top: none;
+                                    border-left: none;
+                                    padding: 10px;
+                                    text-align: center;
+                                "
+                            ><%= data.product_list[i].TOTAL %></td>
+                        </tr>
+                    <% } %>
+                </table>
+                <p style="margin-top: 15px">
+                    <b style="display: inline-block">Số chứng từ gốc kèm theo:</b> ..................
+                </p>
+                <p style="margin-top: 15px"><b style="display: inline-block; width: 180px">Ghi chú: </b> <%=data.note %> </p>
+            </div>
+            <div style="margin-top: 15mm; padding: 0 10mm; overflow: hidden">
+                <div style="width: 25%; float: left; text-align: center; padding-top: 32px">
+                    <h3 style="font-size: 15px; margin: 0; padding: 0">Người lập phiếu</h3>
+                    <p style="margin: 0; padding: 0; margin-top: 10px"><i>(Ký & ghi rõ họ tên)</i></p>
+                </div>
+                <div style="width: 25%; float: left; text-align: center; padding-top: 32px">
+                    <h3 style="font-size: 15px; margin: 0; padding: 0">Người duyệt phiếu</h3>
+                    <p style="margin: 0; padding: 0; margin-top: 10px"><i>(Ký & ghi rõ họ tên)</i></p>
+                </div>
+                <div style="width: 25%; float: left; text-align: center; padding-top: 32px">
+                    <h3 style="font-size: 15px; margin: 0; padding: 0">Thủ kho</h3>
+                    <p style="margin: 0; padding: 0; margin-top: 10px"><i>(Ký & ghi rõ họ tên)</i></p>
+                </div>
+                <div style="width: 25%; float: left; text-align: center">
+                    <p style="margin: 0; padding: 0; line-height: 30px">Hà Nội, ngày <%=data.stocks_out_request_date%></p>
+                    <h3 style="font-size: 15px; margin: 0; padding: 0">Bên nhận hàng</h3>
+                    <p style="margin: 0; padding: 0; margin-top: 10px"><i>(Ký & ghi rõ họ tên)</i></p>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <body
+        style="
+            margin: 0;
+            padding: 0;
+            font-size: 11px;
+            background: #f2f2f2;
+            font-family: 'Time New Roman', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+                Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        "
+    >
+        <div
+            style="
+                margin: 0;
+                padding: 0;
+                max-width: 210mm;
+                max-height: auto;
+                height: auto;
+                background: #fff;
+                margin: 0 auto;
+                position: relative;
+            "
+        >
+            <div style="overflow: hidden; padding: 3mm 7mm">
+              <div style="width: 20%; text-align: center; float: left">
+                <img
+                src="http://shopdunk-html.blackwind.vn/bw_image/logo_pphieu.png"
+                    alt="2" style="max-height: 60px" />
+            </div>
+            <div style="width: 57%; text-align: center; float: left">
+                <h2 style="
+                        margin: 0;
+                        padding: 0;
+                        font-size: 16px;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        color: #333333;
+                    ">
+                    CÔNG TY CỔ PHẦN HESMAN VIỆT NAM
+                </h2>
+                <p style="margin: 7px auto; padding: 0">
+                    Địa chỉ: Số 76 Thái Hà, Phường Trung Liệt, Quận Đống Đa, Thành phố Hà Nội, Việt Nam
+                </p>
+            </div>
+            <div style="width: 23%; text-align: center; float: right">
+                <h3 style="margin: 0; padding: 0; font-size: 12px; margin-top: 5px; font-weight: bold">
+                    Mẫu số 01 - TT
+                </h3>
+                <p style="margin: 7px auto; padding: 0">
+                    (Ban hành theo thông tư số 200/2014/TT - BTC Ngày 22/12/2014 của BTC)
+                </p>
+            </div>
+            </div>
+            <h1
+                style="
+                    margin: 0;
+                    padding: 0;
+                    font-size: 25px;
+                    font-weight: bold;
+                    color: #313444;
+                    text-align: center;
+                    padding-top: 10mm;
+                "
+            >
+                BẢNG KÊ IMEI
+            </h1>
+
+            <div style="margin-top: 5mm; padding: 0 10mm">
+                <table style="font-size: 13px; border-spacing: 0; width: 100%">
+                    <tr style="font-weight: bold; background: #313444">
+                        <td rowspan="1" style="padding: 10px; color: #fff; text-align: center">STT</td>
+                        <td rowspan="1" style="padding: 10px; color: #fff">Mã hàng hóa</td>
+                        <td rowspan="1" style="padding: 10px; color: #fff">Imei</td>
+                    </tr>
+                    <% for(var i=0; i<data.product_imei_code.length; i++) {%>
+                    <tr>
+                        <td style="border: 1px solid #ccc; border-top: none; padding: 10px; text-align: center"><%= i+1 %></td>
+                        <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px">
+                            <b><%= data.product_imei_code[i].PRODUCTCODE %></b>
+                        </td>
+                        <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px">
+                            <%= data.product_imei_code[i].PRODUCTIMEICODE %>
+                        </td>
+                    </tr>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

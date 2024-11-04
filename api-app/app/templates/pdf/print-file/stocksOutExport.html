@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Phiếu xuất kho</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body style="
+            margin: 0;
+            padding: 0;
+            font-size: 11px;
+            background: #f2f2f2;
+            font-family: 'Time New Roman', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+                Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: normal;
+        ">
+    <div style="
+                margin: 0;
+                padding: 0;
+                max-width: 210mm;
+                max-height: 297mm;
+                height: 297mm;
+                background: #fff;
+                margin: 0 auto;
+                position: relative;
+            ">
+        <div style="overflow: hidden; padding: 3mm 7mm">
+            <div style="width: 72%; text-align: center; float: left">
+                <img src="http://shopdunk-html.blackwind.vn/bw_image/logo_pphieu.png" alt="2"
+                    style="float: left; height: 55px" />
+                <h2 style="
+                            margin: 0;
+                            padding: 0;
+                            font-size: 12px;
+                            margin-top: 5px;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            color: #19376d;
+                        ">
+                    CÔNG TY CỔ PHẦN HESMAN VIỆT NAM
+                </h2>
+                <p style="margin: 7px auto; padding: 0">
+                    Địa chỉ: Số 76 Thái Hà, Phường Trung Liệt, Quận Đống Đa, Thành phố Hà Nội, Việt Nam
+            </div>
+            <div style="width: 23%; text-align: center; float: right">
+                <h3 style="margin: 0; padding: 0; font-size: 12px; margin-top: 5px; font-weight: bold">
+                    Mẫu số 01 - TT
+                </h3>
+                <p style="margin: 7px auto; padding: 0">
+                    (Ban hành theo thông tư số 200/2014/TT - BTC Ngày 22/12/2014 của BTC)
+                </p>
+            </div>
+        </div>
+        <h1 style="
+                                    border: 1px solid #ccc;
+                                    border-top: none;
+                                    border-left: none;
+                                    padding: 10px;
+                                    text-align: center;
+                                ">
+            <%= data.product_list[i].UNITNAME %>
+                </td>
+                <td style="
+                                    border: 1px solid #ccc;
+                                    border-top: none;
+                                    border-left: none;
+                                    padding: 10px;
+                                    text-align: center;
+                                ">
+                    <%= data.product_list[i].TOTAL %>
+                </td>
+                <td style="
+                                    border: 1px solid #ccc;
+                                    border-top: none;
+                                    border-left: none;
+                                    padding: 10px;
+                                    text-align: center;
+                                ">
+                    <%= data.product_list[i].TOTAL %>
+                </td>
+                </tr>
+                <% } %>
+                    </table>
+                    <p style="margin-top: 15px">
+                        <b style="display: inline-block">Số chứng từ gốc kèm theo:</b> ..................
+                    </p>
+                    <p style="margin-top: 15px"><b style="display: inline-block; width: 180px">Ghi chú: </b>
+                        <%=data.note %>
+                    </p>
+    </div>
+    <div style="margin-top: 15mm; padding: 0 10mm; overflow: hidden">
+        <div style="width: 25%; float: left; text-align: center; padding-top: 32px">
+            <h3 style="font-size: 15px; margin: 0; padding: 0">Người lập phiếu</h3>
+            <p style="margin: 0; padding: 0; margin-top: 10px"><i>(Ký & ghi rõ họ tên)</i></p>
+        </div>
+        <div style="width: 25%; float: left; text-align: center; padding-top: 32px">
+            <h3 style="font-size: 15px; margin: 0; padding: 0">Người duyệt phiếu</h3>
+            <p style="margin: 0; padding: 0; margin-top: 10px"><i>(Ký & ghi rõ họ tên)</i></p>
+        </div>
+        <div style="width: 25%; float: left; text-align: center; padding-top: 32px">
+            <h3 style="font-size: 15px; margin: 0; padding: 0">Thủ kho</h3>
+            <p style="margin: 0; padding: 0; margin-top: 10px"><i>(Ký & ghi rõ họ tên)</i></p>
+        </div>
+        <div style="width: 25%; float: left; text-align: center">
+            <p style="margin: 0; padding: 0; line-height: 30px">Hà Nội, ngày
+                <%=data.stocks_out_request_date%>
+            </p>
+            <h3 style="font-size: 15px; margin: 0; padding: 0">Bên nhận hàng</h3>
+            <p style="margin: 0; padding: 0; margin-top: 10px"><i>(Ký & ghi rõ họ tên)</i></p>
+        </div>
+    </div>
+    </div>
+</body>
+
+<body style="
+            margin: 0;
+            padding: 0;
+            font-size: 11px;
+            background: #f2f2f2;
+            font-family: 'Time New Roman', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+                Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        ">
+    <div style="
+                margin: 0;
+                padding: 0;
+                max-width: 210mm;
+                max-height: 297mm;
+                height: 297mm;
+                background: #fff;
+                margin: 0 auto;
+                position: relative;
+            ">
+        <div style="overflow: hidden; padding: 3mm 7mm">
+            <div style="width: 72%; text-align: center; float: left">
+                <img src="http://shopdunk-html.blackwind.vn/bw_image/logo_pphieu.png" alt="2"
+                    style="float: left; height: 55px" />
+                <h2 style="
+                            margin: 0;
+                            padding: 0;
+                            font-size: 12px;
+                            margin-top: 5px;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            color: black;
+                        ">
+                    CÔNG TY CỔ PHẦN XÂY DỰNG VÀ ĐẦU TƯ THƯƠNG MẠI SHOPDUNK
+                </h2>
+                <p style="margin: 7px auto; padding: 0">
+                    Địa chỉ: Số 76 Thái Hà, phường Trung Liệt, quận Đống Đa, thành phố Hà Nội, Việt
+                    Nam.<br />MST: 0106713191 -
+                    1900.6626 - contact@shopdunk.com
+                </p>
+            </div>
+            <div style="width: 23%; text-align: center; float: right">
+                <h3 style="margin: 0; padding: 0; font-size: 12px; margin-top: 5px; font-weight: bold">
+                    Mẫu số 01 - TT
+                </h3>
+                <p style="margin: 7px auto; padding: 0">
+                    (Ban hành theo thông tư số 200/2014/TT - BTC Ngày 22/12/2014 của BTC)
+                </p>
+            </div>
+        </div>
+        <h1 style="
+                    margin: 0;
+                    padding: 0;
+                    font-size: 25px;
+                    font-weight: bold;
+                    color: black;
+                    text-align: center;
+                    padding-top: 10mm;
+                ">
+            BẢNG KÊ IMEI
+        </h1>
+
+        <div style="margin-top: 5mm; padding: 0 10mm">
+            <table style="font-size: 13px; border-spacing: 0; width: 100%">
+                <tr style="font-weight: bold; background: black">
+                    <td rowspan="1" style="padding: 10px; color: #fff; text-align: center">STT</td>
+                    <td rowspan="1" style="padding: 10px; color: #fff">Mã hàng hóa</td>
+                    <td rowspan="1" style="padding: 10px; color: #fff">Imei</td>
+                </tr>
+                <% for(var i=0; i<data.product_imei_code.length; i++) {%>
+                    <tr>
+                        <td style="border: 1px solid #ccc; border-top: none; padding: 10px; text-align: center">
+                            <%= i+1 %>
+                        </td>
+                        <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px">
+                            <b>
+                                <%= data.product_imei_code[i].PRODUCTIMEICODE %>
+                            </b>
+                            =======
+                            ">
+                            BẢNG KÊ IMEI
+                            </h1>
+
+                            <div style="margin-top: 5mm; padding: 0 10mm">
+                                <table style="font-size: 13px; border-spacing: 0; width: 100%">
+                                    <tr style="font-weight: bold; background: black">
+                                        <td rowspan="1" style="padding: 10px; color: #fff; text-align: center">STT
+                                        </td>
+                                        <td rowspan="1" style="padding: 10px; color: #fff">Mã hàng hóa</td>
+                                        <td rowspan="1" style="padding: 10px; color: #fff">Imei</td>
+                                    </tr>
+                                    <% for(var i=0; i<data.product_imei_code.length; i++) {%>
+                                        <tr>
+                                            <td
+                                                style="border: 1px solid #ccc; border-top: none; padding: 10px; text-align: center">
+                                                <%= i+1 %>
+                                            </td>
+                                            <td
+                                                style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px">
+                                                <%= data.product_imei_code[i].PRODUCTCODE %>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                            </div>
+        </div>
+</body>
+
+</html>

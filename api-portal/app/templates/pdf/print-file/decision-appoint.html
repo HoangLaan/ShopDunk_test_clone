@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quyết định bổ nhiệm </title>
+    <meta charset="UTF-8">
+    <style></style>
+    <style>
+        .--savior-overlay-transform-reset {
+            transform: none !important;
+        }
+
+        .--savior-overlay-z-index-top {
+            z-index: 2147483643 !important;
+        }
+
+        .--savior-overlay-position-relative {
+            position: relative;
+        }
+
+        .--savior-overlay-overflow-hidden {
+            overflow: hidden !important;
+        }
+
+        .--savior-overlay-overflow-x-visible {
+            overflow-x: visible !important;
+        }
+
+        .--savior-overlay-overflow-y-visible {
+            overflow-y: visible !important;
+        }
+
+        .--savior-overlay-z-index-reset {
+            z-index: auto !important;
+        }
+
+        .--savior-overlay-display-none {
+            display: none !important;
+        }
+
+        .--savior-overlay-clearfix {
+            clear: both;
+        }
+
+        .--savior-overlay-reset-filter {
+            filter: none !important;
+            backdrop-filter: none !important;
+        }
+
+        .--savior-tooltip-host {
+            z-index: 9999;
+            position: absolute;
+            top: 0;
+        }
+
+        /*Override css styles for Twitch.tv*/
+        main.--savior-overlay-z-index-reset {
+            z-index: auto !important;
+        }
+
+        main.--savior-overlay-z-index-top {
+            z-index: auto !important;
+        }
+
+        main.--savior-overlay-z-index-top .channel-root__player-container+div,
+        main.--savior-overlay-z-index-top .video-player-hosting-ui__container+div {
+            opacity: 0.1;
+        }
+
+        /*Dirty hack for facebook big video page e.g: https://www.facebook.com/abc/videos/...*/
+        .--savior-backdrop {
+            position: fixed !important;
+            z-index: 2147483642 !important;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw !important;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .--savior-overlay-twitter-video-player {
+            position: fixed;
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+        }
+
+        /* Fix conflict css with zingmp3 */
+        .zm-video-modal.--savior-overlay-z-index-reset {
+            position: absolute;
+        }
+
+        /* Dirty hack for xvideos99 */
+        #page #main.--savior-overlay-z-index-reset {
+            z-index: auto !important;
+        }
+
+        /* Overlay for ok.ru */
+        #vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
+            position: absolute;
+            overflow-y: hidden;
+        }
+
+        /* Fix missing controller for tv.naver.com */
+        .--savior-overlay-z-index-top.rmc_controller,
+        .--savior-overlay-z-index-top.rmc_setting_intro,
+        .--savior-overlay-z-index-top.rmc_highlight,
+        .--savior-overlay-z-index-top.rmc_control_settings {
+            z-index: 2147483644 !important;
+        }
+
+        /* Dirty hack for douyi.com */
+        .swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
+        .swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
+            display: none;
+        }
+
+        .videoWrap+div>div {
+            pointer-events: unset;
+        }
+
+        /* Dirty hack for fpt.ai */
+        .mfp-wrap.--savior-overlay-z-index-top {
+            position: relative;
+        }
+
+        .mfp-wrap.--savior-overlay-z-index-top .mfp-close {
+            display: none;
+        }
+
+        .mfp-wrap.--savior-overlay-z-index-top .mfp-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset+nav {
+            z-index: -1 !important;
+        }
+
+        section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset~div {
+            position: relative;
+        }
+
+        div[class^="tiktok"].--savior-overlay-z-index-reset {
+            z-index: 2147483644 !important;
+        }
+
+        @-moz-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-o-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body
+    style="margin: 0; padding: 0; font-size: 14px; background: #f2f2f2; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+    <div
+        style="margin: 0; padding: 0; max-width: 210mm; max-height: 297mm; height: 297mm; background: #fff; margin: 0 auto;">
+        <div style="overflow: hidden; padding: 3mm 7mm;">
+            <div style="width:50%; text-align: center; float: left">
+                <h2
+                    style="margin: 0; padding: 0; font-size: 16px; text-transform: uppercase; font-weight: bold; color: #333333;">
+                    CÔNG TY CỔ PHẦN HESMAN VIỆT NAM</h2>
+
+            </div>
+            <div style="width: 50%; text-align: center; float: right">
+                <h2
+                    style="margin: 0; padding: 0; font-size: 16px; text-transform: uppercase; font-weight: bold; color: #333333;">
+                    CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h2>
+                <p style="margin: 0; padding: 0; font-size: 14px; font-weight: bold ; color: #333333;"> Độc lập - Tự do
+                    - Hạnh phúc
+                </p>
+            </div>
+
+        </div>
+        <div style="overflow: hidden; padding: 0 7mm;">
+            <div style="width:50%; text-align: center; float: left">
+                <hr width="50%" />
+
+                <span style="margin: 0; padding: 0; font-size: 14px; ">Số:
+                    &nbsp;&nbsp; &nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp; /QĐ-HMG</span>
+            </div>
+            <div style=" width:50%; text-align: center; float: right">
+                <hr width="50%" />
+
+                <p style="margin: 0; padding: 0; font-size: 14px; ">Hà Nội, ngày 12 tháng 05 năm 2023 </p>
+            </div>
+        </div>
+        <h1 style=" margin: 0; padding: 0; font-size: 21px; font-weight: bold; color:#333333; text-align: center;
+                        padding-top: 10mm; ">
+            QUYẾT ĐỊNH</h1>
+        <% if(data.proposal_type==1 ) { %>
+            <h3 style=" margin: 0; padding: 2mm; font-size: 14px; font-weight: bold; color:#333333; text-align: center;
+            ">V/v: Bổ nhiệm Cán bộ nhân viên </h3>
+            <% } %>
+                <% if(data.proposal_type==2) { %>
+                    <h3 style=" margin: 0; padding: 2mm; font-size: 14px; font-weight: bold; color:#333333; text-align: center;
+                    ">V/v: Miễn nhiệm chức vụ đối với Cán bộ nhân viên</h3>
+                    <% } %>
+                        <% if(data.proposal_type==4){ %>
+                            <h3 style=" margin: 0; padding: 2mm; font-size: 14px; font-weight: bold; color:#333333; text-align: center;
+                        ">V/v: Điều chuyển Cán bộ nhân viên</h3>
+                            <% } %>
+                                <h3 style=" margin: 0; padding: 0; font-size: 14px; font-weight: bold; color:#333333; text-align: center;
+        ">TỔNG GIÁM ĐỐC CÔNG TY CỔ PHẦN HESMAN VIỆT NAM</h3>
+                                <% if(data.proposal_type==1 ) {%>
+                                    <div style=" margin-top: 10mm; padding: 0 10mm; font-size: 14px;">
+                                        <ul style="list-style: none; margin: 0; padding: 0; padding-left: 20px;">
+                                            <li style="margin-top: 3mm  ">
+                                                - Căn cứ Bộ luật Lao động năm 2012 và các văn bản hướng dẫn thi hành;
+                                            </li>
+                                            <li>- Căn cứ Điều lệ Công ty Cổ phần Hesman Việt Nam;</li>
+                                            <li>
+                                                - Căn cứ Nghị quyết số .......... ngày 01/11/2016 của Hội đồng Quản trị
+                                                về
+                                                việc
+                                                Ban
+                                                hành
+                                                cơ
+                                                cấu
+                                                tổ
+                                                chức và sơ đồ cơ cấu tổ chức bộ máy của Công ty Cổ phần Hesman Việt Nam;
+                                            </li>
+                                            <li>
+                                                - Căn cứ Quyết định số .... ngày .... của ....... về việc phê duyệt điều
+                                                chỉnh
+                                                Sơ đồ
+                                                cơ
+                                                cấu
+                                                tổ
+                                                chức
+                                                và hệ thống chức danh của Phòng/Khối ......;
+                                            </li>
+                                            <li>
+                                                - Xét đề nghị của Khối Nhân sự;
+                                            </li>
+                                            <li>
+                                                - Xét năng lực và phẩm chất cán bộ,
+                                            </li>
+                                        </ul>
+                                        <h1 style=" margin: 0; padding: 0; font-size: 18px; font-weight: bold; color:#333333; text-align: center;
+                    padding-top: 10mm; ">
+                                            QUYẾT ĐỊNH</h1>
+                                        <div style="margin-top: 20px; padding-left: 20px;">
+                                            <span style="margin-left: 50px;font-weight: bold; ">Điều 1.</span>
+                                            <span> Bổ nhiệm Ông/Bà <%=data.full_name %> giữ chức vụ <%
+                                                        if(data.change_type==2) { %>
+                                                        <%=data.position_name %>
+                                                            <% }else { %>
+                                                                <%=data.user.position_name %>
+                                                                    <% }%>
+                                                                        – Phòng/ Ban <% if(data.change_type==1) { %>
+                                                                            <%=data.department_name %>
+                                                                                <%} else {%>
+                                                                                    <%=data.user.department_name %>
+                                                                                        <% } %>
+                                                                                            <span
+                                                                                                style="font-family:'ArialMT', 'Arial', sans-serif;font-weight:400;">&nbsp;
+                                                                                                - Công ty Cổ phần Hesman
+                                                                                                Việt
+                                                                                                Nam kể
+                                                                                                từ
+                                                                                                ngày <span
+                                                                                                    style="font-family:'ArialMT', 'Arial', sans-serif;font-weight:400;color:#D9001B;">ngày
+                                                                                                    hiệu
+                                                                                                    lực
+                                                                                                    <%=data.effective_date
+                                                                                                        %>
+                                                                                                </span>
+                                                                                            </span>
+                                                                                            <div
+                                                                                                style="margin-left: 90px;">
+                                                                                                <div> <span>Thông tin về
+                                                                                                        Ông/ Bà
+                                                                                                        <%=data.user.full_name
+                                                                                                            %>
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                                <div> <span> Sinh ngày:
+                                                                                                        <%=data.birthday
+                                                                                                            %>
+                                                                                                            Quốc
+                                                                                                            tịch:
+                                                                                                            <%=data.user.nation_name
+                                                                                                                %>
+                                                                                                                Dân
+                                                                                                                tộc:
+                                                                                                                <%=data.user.country_name
+                                                                                                                    %>
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                                <div> <span> CMND số:
+                                                                                                        <%=data.user.identity_number
+                                                                                                            %>
+                                                                                                            Ngày
+                                                                                                            cấp:
+                                                                                                            <%=data.user.identity_date
+                                                                                                                %>
+                                                                                                                Nơi cấp:
+                                                                                                                <%=data.user.identity_place
+                                                                                                                    %>
+                                                                                                    </span> </div>
+                                                                                                <div>
+                                                                                                    <span> Hộ khẩu
+                                                                                                        thường
+                                                                                                        trú:
+                                                                                                        <%=data.user.permanent_address
+                                                                                                            %>
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                            </div>
+                                            </span>
+                                        </div>
+                                        <div style="margin-top: 20px; padding-left: 20px;">
+                                            <span style="margin-left: 50px;font-weight: bold; ">Điều 2.</span>
+                                            <span> Ông/Bà <%=data.user.full_name %> chịu sự quản lý trực tiếp của
+                                                    <%=data.usermanager.full_name %> , có trách
+                                                        nhiệm tham mưu, giúp
+                                                        việc
+                                                        cho
+                                                        Trưởng
+                                                        Phòng/
+                                                        Khối <% if(data.change_type==1) { %>
+                                                            <%=data.user.department_name %>
+                                                                <% } else { %>
+                                                                    <%=data.department_name %>
+                                                                        <% } %>
+                                                                            , trong
+                                                                            lĩnh vực được giao và được hưởng chế độ tiền
+                                                                            lương,
+                                                                            phụ cấp, các
+                                                                            chế
+                                                                            độ
+                                                                            khác
+                                                                            theo
+                                                                            quy
+                                                                            định
+                                                                            của Công
+                                                                            ty.
+                                            </span>
+                                        </div>
+                                        <div style="margin-top: 20px; padding-left: 20px;">
+                                            <span style="margin-left: 50px;font-weight: bold; ">Điều 3.</span>
+                                            <span> Quyết định có hiệu lực kể từ ngày ký.
+                                            </span>
+                                            <div>
+                                                <span> Các Ông (Bà) Giám đốc Khối, Trưởng các Phòng/ Bộ phận, chi nhánh
+                                                    trực
+                                                    thuộc,
+                                                    các
+                                                    cá
+                                                    nhân
+                                                    có
+                                                    liên quan và Ông/ Bà <%=data.user.full_name %> chịu trách nhiệm thi
+                                                        hành
+                                                        Quyết định
+                                                        này./.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                        <% if(data.proposal_type==2 ) { %>
+                                            <div style=" margin-top: 10mm; padding: 0 10mm; font-size: 14px;">
+                                                <ul
+                                                    style="list-style: none; margin: 0; padding: 0; padding-left: 20px;">
+                                                    <li style="margin-top: 3mm  ">
+                                                        - Căn cứ Bộ luật Lao động năm 2012 và các văn bản hướng dẫn thi
+                                                        hành;
+                                                    </li>
+                                                    <li>- Căn cứ Điều lệ Công ty Cổ phần Hesman Việt Nam;</li>
+                                                    <li>
+                                                        - Căn cứ Nghị quyết số .......... ngày 01/11/2016 của Hội đồng
+                                                        Quản
+                                                        trị
+                                                        về
+                                                        việc
+                                                        Ban
+                                                        hành
+                                                        cơ
+                                                        cấu
+                                                        tổ
+                                                        chức và sơ đồ cơ cấu tổ chức bộ máy của Công ty Cổ phần Hesman
+                                                        Việt
+                                                        Nam;
+                                                    </li>
+                                                    <li>
+                                                        - Căn cứ Quyết định số .... ngày .... của ....... về việc phê
+                                                        duyệt
+                                                        điều
+                                                        chỉnh
+                                                        Sơ đồ
+                                                        cơ
+                                                        cấu
+                                                        tổ
+                                                        chức
+                                                        và hệ thống chức danh của Phòng/Khối ......;
+                                                    </li>
+                                                    <li>
+                                                        - Xét đề nghị của Khối Nhân sự;
+                                                    </li>
+                                                    <li>
+                                                        - Xét năng lực và phẩm chất cán bộ,
+                                                    </li>
+                                                </ul>
+                                                <h1 style=" margin: 0; padding: 0; font-size: 18px; font-weight: bold; color:#333333; text-align: center;
+                        padding-top: 10mm; ">
+                                                    QUYẾT ĐỊNH</h1>
+                                                <div style="margin-top: 20px; padding-left: 20px;">
+                                                    <span style="margin-left: 50px;font-weight: bold; ">Điều 1.</span>
+                                                    <span> Miễn nhiệm chức vụ <%=data.user.position_name %> – Phòng/ Ban
+                                                            <%=data.user.department_name %> <span
+                                                                    style="font-family:'ArialMT', 'Arial', sans-serif;font-weight:400;">&nbsp;
+                                                                    - Công ty Cổ phần Hesman Việt đối với Ông/Bà
+                                                                    <%=data.user.full_name %> kể từ ngày
+                                                                        <%=data.effective_date %>
+                                                                </span>
+                                                    </span>
+                                                </div>
+                                                <div style="margin-top: 20px; padding-left: 20px;">
+                                                    <span style="margin-left: 50px;font-weight: bold; ">Điều 2.</span>
+                                                    <span> Ông/Bà <%=data.user.full_name%> có trách nhiệm bàn giao công
+                                                            việc,
+                                                            tài liệu, hồ sơ và các tài sản có liên quan tại chức danh
+                                                            <%=data.user.position_name %> - Phòng/Khối
+                                                                <%=data.user.department_name %> cho người được giao
+                                                                    nhiệm vụ
+                                                                    tiếp nhận
+                                                    </span>
+                                                </div>
+                                                <div style="margin-top: 20px; padding-left: 20px;">
+                                                    <span style="margin-left: 50px;font-weight: bold; ">Điều 3.</span>
+                                                    <span> Ông/Bà <%=data.user.full_name %> chịu sự quản lý trực tiếp
+                                                            của
+                                                            <%=data.usermanager.full_name %> được phân cấp quản lý, có
+                                                                trách
+                                                                nhiệm tham mưu, giúp việc cho Giám đốc Khối/Trưởng PHòng
+                                                                <%=data.department_name %> trong lĩnh vực được giao
+                                                                    và được hưởng chế độ tiền lương, phụ cấp, các chế độ
+                                                                    khác theo quy định của Công ty.
+                                                    </span>
+                                                </div>
+                                                <div style="margin-top: 20px; padding-left: 20px;">
+                                                    <span style="margin-left: 50px;font-weight: bold; ">Điều 4.</span>
+                                                    <span> Quyết định có hiệu lực kể từ ngày ký.
+                                                    </span>
+                                                    <div>
+                                                        <span> Các Ông (Bà) Giám đốc Khối, Trưởng các Phòng/ Bộ phận,
+                                                            chi nhánh
+                                                            trực
+                                                            thuộc,
+                                                            các
+                                                            cá
+                                                            nhân
+                                                            có
+                                                            liên quan và Ông/ Bà <%=data.user.full_name %> chịu trách
+                                                                nhiệm
+                                                                thi hành
+                                                                Quyết định
+                                                                này./.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                                <% if(data.proposal_type==4 ) { %>
+                                                    <div style=" margin-top: 10mm; padding: 0 10mm; font-size: 14px;">
+                                                        <ul
+                                                            style="list-style: none; margin: 0; padding: 0; padding-left: 20px;">
+                                                            <li style="margin-top: 3mm  ">
+                                                                - Căn cứ Bộ luật Lao động năm 2012 và các văn bản hướng
+                                                                dẫn thi
+                                                                hành;
+                                                            </li>
+                                                            <li>- Căn cứ Điều lệ Công ty Cổ phần Hesman Việt Nam;</li>
+                                                            <li>
+                                                                - Căn cứ Nghị quyết số .......... ngày 01/11/2016 của
+                                                                Hội đồng
+                                                                Quản
+                                                                trị
+                                                                về
+                                                                việc
+                                                                Ban
+                                                                hành
+                                                                cơ
+                                                                cấu
+                                                                tổ
+                                                                chức và sơ đồ cơ cấu tổ chức bộ máy của Công ty Cổ phần
+                                                                Hesman
+                                                                Việt
+                                                                Nam;
+                                                            </li>
+                                                            <li>
+                                                                - Căn cứ Quyết định số .... ngày .... của ....... về
+                                                                việc phê
+                                                                duyệt
+                                                                điều
+                                                                chỉnh
+                                                                Sơ đồ
+                                                                cơ
+                                                                cấu
+                                                                tổ
+                                                                chức
+                                                                và hệ thống chức danh của Phòng/Khối ......;
+                                                            </li>
+                                                            <li>
+                                                                - Xét đề nghị của Khối Nhân sự;
+                                                            </li>
+                                                            <li>
+                                                                - Xét năng lực và phẩm chất cán bộ,
+                                                            </li>
+                                                        </ul>
+                                                        <h1 style=" margin: 0; padding: 0; font-size: 18px; font-weight: bold; color:#333333; text-align: center;
+                            padding-top: 10mm; ">
+                                                            QUYẾT ĐỊNH</h1>
+                                                        <div style="margin-top: 20px; padding-left: 20px;">
+                                                            <span style="margin-left: 50px;font-weight: bold; ">Điều
+                                                                1.</span>
+                                                            <span> Điều chuyển <span
+                                                                    style="font-weight: bold;">Ông/Bà</span>
+                                                                <%=data.user.full_name %>, Chức danh
+                                                                    <%=data.user.position_name %>
+                                                            </span>
+                                                        </div>
+                                                        <div style="margin-top: 20px; padding-left: 20px;">
+                                                            <span style="margin-left: 50px;font-weight: bold; ">Điều
+                                                                2.</span>
+                                                            <span> Ông/Bà <%=data.user.full_name%> có trách nhiệm bàn
+                                                                    giao
+                                                                    công việc,
+                                                                    tài liệu, hồ sơ và các tài sản có liên quan tại chức
+                                                                    danh
+                                                                    <%=data.user.position_name %> - Phòng/Khối
+                                                                        <%=data.user.department_name %> cho người được
+                                                                            giao
+                                                                            nhiệm vụ
+                                                                            tiếp nhận
+                                                            </span>
+                                                        </div>
+                                                        <div style="margin-top: 20px; padding-left: 20px;">
+                                                            <span style="margin-left: 50px;font-weight: bold; ">Điều
+                                                                3.</span>
+                                                            <span> Ông/Bà <%=data.user.full_name %> chịu sự quản lý trực
+                                                                    tiếp
+                                                                    của
+                                                                    <%=data.usermanager.full_name %> được phân cấp quản
+                                                                        lý,
+                                                                        có trách
+                                                                        nhiệm tham mưu, giúp việc cho Giám đốc
+                                                                        Khối/Trưởng PHòng
+                                                                        <%=data.department_name %> trong lĩnh vực
+                                                                            được giao
+                                                                            và được hưởng chế độ tiền lương, phụ cấp,
+                                                                            các chế độ
+                                                                            khác theo quy định của Công ty.
+                                                            </span>
+                                                        </div>
+                                                        <div style="margin-top: 20px; padding-left: 20px;">
+                                                            <span style="margin-left: 50px;font-weight: bold; ">Điều
+                                                                4.</span>
+                                                            <span> Quyết định có hiệu lực kể từ ngày ký.
+                                                            </span>
+                                                            <div>
+                                                                <span> Các Ông (Bà) Giám đốc Khối, Trưởng các Phòng/ Bộ
+                                                                    phận,
+                                                                    chi nhánh
+                                                                    trực
+                                                                    thuộc,
+                                                                    các
+                                                                    cá
+                                                                    nhân
+                                                                    có
+                                                                    liên quan và Ông/ Bà <%=data.user.full_name %> chịu
+                                                                        trách
+                                                                        nhiệm
+                                                                        thi hành
+                                                                        Quyết định
+                                                                        này./.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <% } %>
+                                                        <div
+                                                            style="margin-top: 30mm; padding: 0 10mm; overflow: hidden; ">
+                                                            <div style="width: 50%; float: left; text-align: left;">
+                                                                <h3 style="margin: 0; padding: 0; font-size: 14px;">Nơi
+                                                                    nhận
+                                                                </h3>
+                                                                <ul style="list-style: none; margin: 0; padding: 0; ">
+                                                                    <li>- Như Điều 3 (để t/h); </li>
+                                                                    <li>- HĐQT (để b/c);</li>
+                                                                    <li>- Lưu VT, KNS.</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div style="width: 50%; float: left; text-align: center;">
+                                                                <h3 style="margin: 0; padding: 0; font-size: 14px;">TỔNG
+                                                                    GIÁM
+                                                                    ĐỐC
+                                                                </h3>
+                                                            </div>
+
+                                                        </div>
+    </div>
+</body>
+<div style="position: absolute; top: 0px; display: block !important;"></div>
+
+</html>

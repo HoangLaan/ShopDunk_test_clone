@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'ArialMT', 'Arial', sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .container {
+            margin: 20px;
+            padding: 5px;
+            border: 1px solid rgba(121, 121, 121, 1)
+        }
+
+        .header {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            margin-left: 10px;
+        }
+
+        .company-name {
+            font-family: 'ArialMT', 'Arial', sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+        }
+
+        .fee-name {
+            text-align: center;
+            font-family: 'Arial-BoldMT', 'Arial Bold', 'Arial', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 21px;
+            margin-top: 20px;
+        }
+
+        .header-right {
+            padding-right: 50px;
+        }
+
+        .request {
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .title {
+            font-family: 'Arial-BoldMT', 'Arial Bold', 'Arial', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .content-request {
+
+            width: 100%;
+        }
+
+        .content-request .detail {
+            padding: 10px 0 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 60px;
+
+        }
+
+        .content-request .content .left {
+            width: 25%;
+        }
+
+        .content-request .content .right {
+            width: 75%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .information {
+            margin-left: 60px;
+        }
+
+        .money {
+            display: flex;
+            gap: 10px;
+        }
+
+        .accounting {
+            margin-left: 60px;
+        }
+
+        .accounting .content {
+            margin-left: 30px;
+        }
+
+        .m-20 {
+            margin: 20px 0 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="
+    margin: 0;
+    padding: 0;
+    max-width: 210mm;
+    max-height: 297mm;
+    height: 297mm;
+    background: #fff;
+    margin: 0 auto;
+    position: relative;
+">
+        <div class="header">
+            <div class="header-left">
+                <img src="http://shopdunk-html.blackwind.vn/bw_image/logo_pphieu.png" alt="2"
+                    style="float: left; height: 55px" />
+            </div>
+            <div class="header-center">
+                <div class="company-name">CÔNG TY CỔ PHẦN HESMAN VIỆT NAM</div>
+                <div class="fee-name">PHIẾU ĐỀ NGHỊ SỬ DỤNG NGÂN SÁCH</div>
+            </div>
+            <div class="header-right">
+                <div>Mã hiệu:</div>
+                <div style="margin-top: 20px;">Quy trình: </div>
+            </div>
+        </div>
+        <div class="request">
+            <div class="content-request">
+                <div class="title">
+                    Phần dành cho bộ phận lập đề nghị
+                </div>
+                <div class="content">
+                    <div class="detail">
+                        <div class="left">Họ tên: </div>
+                        <div class="right"><span>
+                                <%=data?.full_name %>
+                            </span></div>
+                    </div>
+                    <div class="detail">
+                        <div class="left">Chức vụ: </div>
+                        <div class="right"><span>
+                                <%=data?.position_name %>
+                            </span></div>
+                    </div>
+                    <div class="detail">
+                        <div class="left">Số điện thoại: </div>
+                        <div class="right"><span>
+                                <%=data?.fullname %>
+                            </span></div>
+                    </div>
+                    <div class="detail">
+                        <div class="left">Phòng ban/bộ phận: </div>
+                        <div class="right"><span>
+                                <%=data?.department_name %>
+                            </span></div>
+                    </div>
+                </div>
+                <table style="font-size: 13px; border-spacing: 0; width: 100%; max-width: 100%; margin-right: 10px;">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">STT</th>
+                            <th style="width: 20%;">Diễn giải</th>
+                            <th style="width: 10%;">Số tiền</th>
+                            <th style="width: 10%;">Số hóa đơn</th>
+                            <th style="width: 10%;">Ngày hóa đơn</th>
+                            <th style="width: 10%; ">Mã ngân sách</th>
+                            <th style="width: 10%;">Phân bổ cho bộ phận/đơn vị</th>
+                            <th style="width: 15%;">Ghi chú</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for(let i=0; i<data.list_budget_goal.length; i++) { %>
+                            <tr>
+                                <td>
+                                    <%=i+1 %>
+                                </td>
+                                <td>
+                                    <%=data.list_budget_goal[i].explain %>
+                                </td>
+                                <td>
+                                    <%=data.list_budget_goal[i].request_budget %>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <%=data.department_name %>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <% } %>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <div style="float: right;"><span style="font-weight: 600; ">TỔNG CỘNG:</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <%=data.total_requset_budget %>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                    </tbody>
+                </table>
+                <div class="information">
+                    <div class="money m-20">
+                        <div>
+                            <p>Số tiền bằng chữ:</p>
+                        </div>
+                        <div>
+                            ...........................................................................................................................
+                        </div>
+                    </div>
+                    <div class="more">
+                        <p>Thông tin liên quan (nếu có):</p>
+                        <div style="margin: 10px 40px;">
+                            <div style="display: flex;">
+                                <span style="width: 15%;">Ngành hàng: </span>
+                                <span style="width: 85%;">...........</span>
+                            </div>
+                        </div>
+                        <div style="margin: 10px 40px;">
+                            <div style="display: flex;">
+                                <span style="width: 15%;">Dự án: </span>
+                                <span style="width: 85%;">...........</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accounting">
+            <div class="title">
+                Phần dành cho bộ phận lập đề Tài chính - Kế toán :
+            </div>
+            <div class="content m-20">
+                <div style="display: flex;" class="m-20">
+                    <div style="width: 40%;">Ngân sách trong mức cho phép: </div>
+                    <div style="margin-left: 30px;"><input type="checkbox" style="transform: scale(2);" /><label
+                            style="margin: 10px;">Có</label></div>
+                    <div style="margin-left: 70px;"><input type="checkbox" style="transform: scale(2);" /><label
+                            style="margin: 10px;">Không</label></div>
+                </div>
+                <div style="display: flex;" class="m-20">
+                    <div style="width: 40%;">Duyệt đề nghị này: </div>
+                    <div style="margin-left: 30px;"><input <%=data.is_review===1 ? "checked" : "" %> type="checkbox"
+                        style="transform: scale(2);" /><label style="margin: 10px;">Có</label></div>
+                    <div style="margin-left: 70px;"><input <%=data.is_review===0 ? "checked" : "" %> type="checkbox"
+                        style="transform: scale(2);" /><label style="margin: 10px;">Không</label></div>
+                </div>
+                <div style="display: flex;" class="m-20">
+                    <div style="width: 30%;">Ghi chú: </div>
+                    <div style="width: 70%;"></div>
+                </div>
+            </div>
+            <div style="display: flex;">
+                <div style="width: 20%;">
+                    <div style="margin-bottom: 50px; font-weight: 600;">Đề xuất bởi</div>
+                    <div>Chức vụ/Vị trí</div>
+                    <div>../...../.....</div>
+                </div>
+                <div style="width: 20%;">
+                    <div style="margin-bottom: 50px; font-weight: 600;">Xác định bởi</div>
+                    <div>Chức vụ/Vị trí</div>
+                    <div>../...../.....</div>
+                </div>
+                <div style="width: 20%;">
+                    <div style="margin-bottom: 50px; font-weight: 600;">Kiểm tra bởi</div>
+                    <div>Chức vụ/Vị trí</div>
+                    <div>../...../.....</div>
+                </div>
+                <div style="width: 20%;">
+                    <div style="margin-bottom: 50px; font-weight: 600;">Kiểm tra bởi</div>
+                    <div>Chức vụ/Vị trí</div>
+                    <div>../...../.....</div>
+                </div>
+                <div style="width: 20%;">
+                    <div style="margin-bottom: 50px; font-weight: 600;">Phê duyệt bởi</div>
+                    <div>Chức vụ/Vị trí</div>
+                    <div>../...../.....</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

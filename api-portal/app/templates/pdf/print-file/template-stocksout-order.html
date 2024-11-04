@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Building Manager</title>
+        <meta charset="utf8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                background: #f1f1f1;
+                font-family: "Roboto";
+                font-size: 12px;
+                color: #333;
+                zoom: 95%;
+            }
+            .bw_a5{
+                width: 148.5mm;
+                height: 210mm;
+                margin: 0 auto;
+                background: #fff;
+                
+                padding: 15px 40px;
+                position: relative;
+            }
+            .bw_header_s{
+                overflow: hidden;
+                /* border-bottom: 1px solid #aaa; */
+                padding-bottom: 15px;
+            }
+            .bw_img_s{
+                width: 70%;
+                text-align: left;
+                float: left;
+                margin-top: 20px;
+            }
+            .bw_address_com{
+                width: calc(30%);
+                float: right;
+                text-align: center;
+            }
+            .bw_address_com h2{
+                font-size: 14px;
+                /* border-bottom: 1px dashed #ddd; */
+                padding-bottom: 5px;
+            }
+            .bw_address_com p{
+                /* margin-top: 5px; */
+                font-style: italic;
+            }
+            .bw_title{
+                padding: 10px 0 0 0;
+                text-align: center;
+            }
+            .bw_title h1{
+                /* color: #C72030; */
+                font-size: 22px;
+                margin-bottom: 5px;
+            }
+            .bw_title p{
+                margin-top: 5px;
+            }
+            .bw_customer ul{
+                overflow: hidden;
+            }
+            .bw_customer ul li{
+                width: 100%;
+                float: left;
+                list-style: none;
+                margin-top: 7px;
+            }
+            table.order{
+                width: 100%;
+                border-bottom: 1px solid #aaa;
+                border-left: 1px solid #aaa;
+                margin: 10px 0;
+                border-spacing: 0;
+                font-size: 12px;
+            }
+            table.sign{
+                width: 100%;
+                border-spacing: 0;
+            }
+            table.order tr td{
+                padding: 5px 7px;
+                border-top: 1px solid #aaa;
+                border-right: 1px solid #aaa;
+                height: 20px;
+            }
+            table.order tr:first-child td{
+                font-weight: bold;
+            }
+            .bw_t_right{
+                text-align: right;
+                font-weight: bold;
+            }
+            .bw_flex{
+                display: flex;
+                justify-content: space-between;
+            }
+            .bw_nore{
+                display: flex;
+            }
+            .bw_nore p:last-child{
+                padding-left: 10px;
+            }
+            .bw_footer_s{
+                margin-top: 15px;
+                padding-top: 20px;
+                /* border-top: 1px solid #aaa; */
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+            .bw_w25{
+                width: 25%;
+                text-align: center;
+            }
+            .bw_w25 p{
+                font-style: italic;
+                margin-top: 5px;
+            }
+            .bw_footer{
+                position: absolute;
+                bottom: 10px;
+                left: 0;
+                padding: 10px 0;
+                text-align: center;
+                width: 100%;
+            }
+            .bw_footer p:last-child{
+                margin-top: 5px;
+                color: #C72030;
+            }
+            .text-center{
+                text-align: center;
+            }
+            table.bw_tb_info{
+                width: 100%;
+            }
+            table.bw_tb_info tr td{
+                width: 33.33%;
+            }
+            table.bw_tb_info tr td.text-center{
+                text-align: center;
+            }
+            table.bw_tb_info tr td.td-no p{
+                text-align: left;
+                margin-left: 10%;
+            }
+            .bw_no{
+                margin-bottom: 10px;
+            }
+            .text-italic{
+                font-style: italic;
+            }
+            .mb-10{
+                margin-bottom: 10px;
+            }
+            .pb-10{
+                padding-bottom: 10px;
+            }
+            .pl-20{
+                padding-left: 20px;
+            }
+            table.sign tr td.text-right{
+                text-align: right;
+            }
+            .pr-5p{
+                padding-right: 5%;
+            }
+            table.tb-stocks{
+                border-collapse: collapse;
+                width: 100%;
+            }
+            table.tb-stocks tr td {
+                width: 50%;
+            }
+        </style>
+    </head>
+    <body id="bw_home">
+        <div class="bw_a5">
+            <div class="bw_header_s">
+                <div class="bw_img_s">
+                    <p>{{company_name}}</p>
+                    <p>{{business_address_full}}</p>
+                </div>
+                <div class="bw_address_com">
+                    <h2>Mẫu số: 02 - VT</h2>
+                    <p>(Ban hành theo Thông tư số 200/2014/TT-BTC
+                        Ngày 22/12/2014 của Bộ Tài chính)</p>
+                </div>
+            </div>
+            <div class="bw_title">
+               <table class="bw_tb_info">
+                   <tr>
+                       <td class="text-center">
+                        <h1>PHIẾU XUẤT KHO</h1>
+                       </td>
+                   </tr>
+               </table>
+            </div>
+            <div class="bw_no">
+                <table class="bw_tb_info">
+                    <tr>
+                        <td></td>
+                        <td class="text-center"> <p><i>{{print_date}}</i></p></td>
+                        <td class="td-no">
+                            <p>Nợ:</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="text-center"><p>Số: {{stocks_out_request_no}}</p></td>
+                        <td class="td-no">
+                            <p>Có:</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="bw_customer">
+                <ul>
+                    <li>Họ tên người nhận hàng: {{customer_name}}</li>
+                    <li>Địa chỉ (bộ phận): {{customer_address}}</li>
+                    <li>Lý do xuất kho: {{note}}</li>
+                    <li>
+                        <table class="tb-stocks" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Xuất tại kho (ngăn lô): {{stocks_name}}
+                                    </td>
+                                    <td>
+                                        Địa điểm: {{stocks_address}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+                <table class="order">
+                    <tr>
+                        <td rowspan="2" style="width: 2%; text-align: center;">STT</td>
+                        <td rowspan="2" style="width: 30%; text-align: center;">Tên, nhãn hiệu, quy cách, phẩm chất vật tư, dụng cụ sản phẩm, hàng hóa</td>
+                        <td rowspan="2" style="text-align: center;">Mã số</td>
+                        <td rowspan="2" style="text-align: center;">Đơn vị tính</td>
+                        <td class="" colspan="2" style="text-align: center;">Số lượng</td>
+                        <!-- <td rowspan="2" style="text-align: center;min-width: 80px;">Đơn giá</td> -->
+                        <!-- <td rowspan="2" class="bw_t_right" style="text-align: center; min-width: 80px;">Thành tiền</td> -->
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">Yêu cầu</td>
+                        <td style="text-align: center;">Thực xuất</td>
+                    </tr>
+                    {{#each product_list}}
+                        <tr>
+                            <td class="text-center">{{this.row_index}}</td>
+                            <td>{{this.product_name}} </td>
+                            <td>{{this.product_code}}</td>
+                            <td>{{this.unit_name}}</td>
+                            <td style="text-align: center">{{this.request_quantity}}</td>
+                            <td style="text-align: center">{{this.quantity}}</td>
+                            <!-- <td class="bw_t_right">{{this.price}} đ</td> -->
+                            <!-- <td class="bw_t_right">{{this.total_price}} đ</td> -->
+                        </tr>
+                    {{/each}}
+                    <!-- <tr>
+                        <td colspan="6">Cộng</td>
+                        <td></td>
+                        <td style="text-align: right">
+                          <span>{{this.total_price}} đ</span>
+                        </td>
+                    </tr> -->
+                </table>
+                <div class="">
+                    <p>- Ghi chú: {{note}}</p>
+                    <p>- Số chứng từ gốc kèm theo: .....</p>
+                </div>
+                <div class="bw_footer_s">
+                    <table style="border: 0" class="sign">
+                        <tr class="">
+                            <td colspan="3"></td>
+                            <td colspan="2" class="text-italic pb-10 pr-5p text-right">
+                                Ngày....tháng....năm .......
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; border: 0">
+                                <h3>Người lập phiếu</h3>
+                                <p>(Ký, họ tên)</p>
+                            </td>
+                            <td style="text-align: center; border: 0">
+                                <h3>Người nhận hàng</h3>
+                                <p>(Ký, họ tên)</p>
+                            </td>
+                            <td style="text-align: center; border: 0">
+                                <h3>Thủ kho</h3>
+                                <p>(Ký, họ tên)</p>
+                            </td>
+                            <td style="text-align: center; border: 0">
+                                <h3>Kế toán trưởng</h3>
+                                <p>(Ký, họ tên)</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- <div class="bw_footer">
+                    <p>Hóa đơn này không  thay thế hóa đơn GTGT</p>
+                    <p><i>Khách hàng xuất hóa đơn vui lòng liên hệ acess.kt@gmail.com - 0941786071</i></p>
+                </div> -->
+            </div>
+        </div>
+    </body>
+</html>

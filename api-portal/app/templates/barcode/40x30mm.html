@@ -1,0 +1,19 @@
+<html>
+    <body style="padding: 0; margin: 0">
+        {{#each barcodes}}
+        <table align="center" style="width: 100%; height: 100%; text-align: center;">
+            <tr style="text-align: center">
+                <td style="text-align: center; vertical-align: middle;">
+                    {{#if this.is_show_product_name}}
+                    <div style="font-size: 6px; margin-bottom: 5%">{{this.product_name}}</div>
+                    {{/if}}
+                    <div><img style="width: 60%; height: 25px; margin-bottom: 5%" src="{{this.barcode}}" /></div>
+                    {{#if this.is_show_price}}
+                    <div style="font-size: 10px">{{this.price}}</div>
+                    {{/if}}
+                </td>
+            </tr>
+        </table>
+        {{/each}}
+    </body>
+</html>

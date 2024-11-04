@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Phiếu Yêu cầu mua hàng</title>
+        <meta charset="UTF-8">
+    </head>
+    <body style="margin: 0; padding: 0; font-size: 14px; background: #f2f2f2; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+        <div style="margin: 0; padding: 0; max-width: 210mm;  height: 297mm; background: #fff; margin: 0 auto;">
+            <div style="overflow: hidden; border-bottom: 1px solid #aaa; padding: 3mm 7mm;">
+                <div style="width: 20%; text-align: center; float: left;">
+                    <img src="https://res.cloudinary.com/dfs1kb2dk/image/upload/v1678984623/logohoangha1_b9xxxt.png" alt="2">
+                </div>
+                <div style="width: 80%; text-align: center; float: right">
+                    <h2 style="margin: 0; padding: 0; font-size: 17px; text-transform: uppercase; font-weight: bold; color: #009981;">CÔNG TY CỔ PHẦN HESMAN VIỆT NAM</h2>
+                    <p style="margin: 7px auto; padding: 0;">Địa chỉ: Số 76 Thái Hà, Phường Trung Liệt, Quận Đống Đa, Thành phố Hà Nội, Việt Nam.</p>
+                </div>
+            </div>
+            <h1 style="margin: 0; padding: 0; font-size: 25px; font-weight: bold; color:#009981; text-align: center; padding-top: 10mm;">ĐƠN HÀNG</h1>
+            <p style="margin: 0; padding: 0; font-size: 17px; margin-top: 3mm; margin-bottom: 10mm; text-align: center;"><%= data.order_no %> - <%= data.created_date %></p>
+            <div style="margin-top: 10mm; padding: 0 10mm;">
+                <ul style="list-style: none; margin: 0; padding: 0; ">
+                    <li style="margin: 3mm 0;"><b style="display: inline-block; width: 120px">Khách hàng:</b> <%= data.customer_name %> </li>
+                    <li style="margin: 3mm 0;"><b style="display: inline-block; width: 120px">Địa chỉ:</b><%= data.customer_address %> </li>
+                    <li style="margin: 3mm 0;"><b style="display: inline-block; width: 120px">Số điện thoại:</b> <%= data.phone_number %></li>
+                    <li style="margin: 3mm 0;"><b style="display: inline-block; width: 120px">Nhân viên bán hàng:</b> <%= data.created_user %></li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 5mm; padding: 0 10mm;">
+                <table style="font-size: 13px; border-spacing: 0; width: 100%;">
+                    <tr style="font-weight: bold; background: #00483D;">
+                        <td style="padding: 10px; color: #fff; text-align: center;">STT</td>
+                        <td style="padding: 10px; color: #fff;">Mã sản phẩm</td>
+                        <td style="padding: 10px; color: #fff;">Tên sản phẩm</td>
+                        <td style="padding: 10px; color: #fff; text-align: center;">ĐVT</td>
+                        <td style="padding: 10px; color: #fff; text-align: center;">Đơn giá</td>
+                        <td style="padding: 10px; color: #fff; text-align: center;">Số lượng</td>
+                        <td style="padding: 10px; color: #fff; text-align: center;">Tổng tiền</td>
+                        <td style="padding: 10px; color: #fff; text-align: center;">Ghi chú</td>
+
+                    </tr>
+                    <% for(var i=0; i<data.products.length; i++) {%>
+                        <tr>
+                            <td style="border: 1px solid #ccc; border-top: none; padding: 10px; text-align: center;">
+                                <%= i+1 %>
+                            </td>
+                            <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px;">
+                                <b>
+                                    <%= data.products[i].product_code %>
+                                </b>
+                            </td>
+                            <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px;">
+                                <%= data.products[i].product_name %>
+                            </td>
+                            <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px;text-align: center;">
+                                <%= data.products[i].unit_name %>
+                            </td>
+                            <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px;text-align: center;">
+                                <%= data.products[i].price %>
+                            </td>
+                            <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px;text-align: center;">
+                                <%= data.products[i].quantity %>
+                            </td>
+                            <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px;text-align: center;">
+                                <%= data.products[i].total_money %>
+                            </td>
+                            <td style="border: 1px solid #ccc; border-top: none; border-left: none; padding: 10px;text-align: center;">
+                                <%= data.products[i].note %>
+                            </td>
+                        </tr>
+                        <% } %>
+                </table>
+                <p style="margin-top: 15px;"><b style="display: inline-block; width: 120px">Ghi chú:</b> <%= data.description %></p>
+
+                <div style="margin-top: 10mm; width: 100%;display: flex;align-items: end;flex-direction: column;">
+                    <div style="width: 40%; float: left; display: flex;flex-direction: row;justify-content: space-between;">
+
+                        <b style="margin: 0; padding: 0; line-height: 30px;">Tổng tiền hàng:</b>
+
+                        <span style="margin: 0; padding: 0; margin-top: 10px;"><%= data.total_money %> đ</span>
+
+                    </div>
+                    <div style="width: 40%; float: left; display: flex;flex-direction: row;justify-content: space-between;margin-top: 5mm;">
+
+                        <b style="margin: 0; padding: 0; line-height: 30px;">Tổng tiền giảm giá:</b>
+
+                        <span style="margin: 0; padding: 0; margin-top: 10px;"><%= data.total_discount %> đ</span>
+
+                    </div>
+                    <div style="width: 40%; float: left; display: flex;flex-direction: row;justify-content: space-between;margin-top: 5mm;">
+
+                        <b style="margin: 0; padding: 0; line-height: 30px;">Tổng tiền còn lại:</b>
+
+                        <span style="margin: 0; padding: 0; margin-top: 10px;"><%= data.total_a_mount %> đ</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 15mm; padding: 0 10mm; overflow: hidden;">
+                <div style="width: 33.333333333%; float: left; text-align: center; padding-top: 32px;">
+                    <h3 style="margin: 0; padding: 0;">Khách hàng</h3>
+                    <p style="margin: 0; padding: 0; margin-top: 10px;"><i>(Ký & ghi rõ họ tên)</i></p>
+                </div>
+                <div style="width: 33.333333333%; float: left; text-align: center; padding-top: 32px">
+                    <h3 style="margin: 0; padding: 0;">Nhân viên</h3>
+                    <p style="margin: 0; padding: 0; margin-top: 10px;"><i>(Ký & ghi rõ họ tên)</i></p>
+                </div>
+                <div style="width: 33.333333333%; float: left; text-align: center">
+                    <p style="margin: 0; padding: 0; line-height: 30px;">Hà Nội, ngày 20/09/2022</p>
+                    <h3 style="margin: 0; padding: 0;">Trưởng cửa hàng</h3>
+                    <p style="margin: 0; padding: 0; margin-top: 10px;"><i>(Ký & ghi rõ họ tên)</i></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
